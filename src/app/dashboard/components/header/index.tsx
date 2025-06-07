@@ -3,7 +3,7 @@
 import Link from "next/link"
 import styles from './styles.module.scss'
 import Image from "next/image"
-import logoImg from '/public/Logo.png'
+import LogoImage from '../../../../../public/Logo.png';
 import { LogOutIcon } from "lucide-react"
 import { deleteCookie } from "cookies-next"
 import { useRouter } from "next/navigation"
@@ -25,7 +25,7 @@ export function Header(){
                 <Link href={"/dashboard"}>
                     <Image
                         alt="Logo App garçon"
-                        src={logoImg}
+                        src="/Logo.png"
                         width={140}
                         height={50}
                         priority={true}
