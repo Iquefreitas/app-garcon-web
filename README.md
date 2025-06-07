@@ -1,36 +1,103 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Getting Started
+AppGarçon - Sistema de Gerenciamento para Restaurantes
 
-First, run the development server:
+Sistema já publicado: https://app-garcon-web.vercel.app/
+ * Vercel
+ * Neon (BD)
 
-```bash
+Funcionalidades
+* Sistema de Pedidos em tempo real (Via garçon com Smartphone) - (React Native)
+* Gestão de Mesas e comandas ( Sistema de Mesas em aberto para cozinha/Caixa visualizar) - (Web / App Smartphone)
+
+Sistema completo para gestão de pedidos em restaurantes com interfaces otimizadas para garçons e cozinha.
+
+🚀 Tecnologias Utilizadas
+Frontend
+Next.js 14 (App Router)
+
+TypeScript - Tipagem estática
+
+CSS Modules - Estilização modularizada
+
+Lucide React
+Sonner - Notificações (toast)
+
+Next Navigation - Roteamento
+
+Backend
+API REST - Integração com backend
+
+Cookies-next - Gerenciamento de sessão
+
+JWT - Autenticação
+
+Funcionalidades Principais
+✅ Autenticação segura com JWT
+✅ Navegação entre categorias e produtos
+✅ Logout com limpeza de cookies
+✅ Design responsivo
+✅ Feedback visual com toasts
+
+🛠️ Estrutura do Código
+Componente Header (header.tsx)
+tsx
+// Cabeçalho com navegação e logout
+<header>
+  <Link href="/dashboard">
+    <Image src={logoImg} alt="Logo" width={140} height={50}/>
+  </Link>
+  <nav>
+    <Link href="/dashboard/category">Categoria</Link>
+    <Link href="/dashboard/product">Produto</Link>
+    <button onClick={handleLogout}>
+      <LogOutIcon size={24}/>
+    </button>
+  </nav>
+</header>
+Página de Login (page.tsx)
+tsx
+// Formulário de autenticação
+<form action={handleLogin}>
+  <input type="email" name="email" required/>
+  <input type="password" name="password" required/>
+  <button type="submit">Acessar</button>
+</form>
+<Link href="/signup">Cadastre-se</Link>
+🎨 Estilização
+Variáveis CSS para cores (--dark-900, --green-900)
+
+Efeitos hover suaves
+
+Layout responsivo
+
+scss
+.headerContainer {
+  height: 6rem;
+  background: var(--dark-900);
+  nav a:hover {
+    color: #FEBC5A;
+    transform: scale(1.05);
+  }
+}
+⚙️ Como Executar
+Instale as dependências:
+
+bash
+npm install
+Configure as variáveis de ambiente:
+
+bash
+cp .env.example .env.local
+Inicie o servidor:
+
+bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+📌 Melhorias Futuras
+Dashboard administrativo
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Dark mode
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Internacionalização
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+📄 Licença
+João Freitas
